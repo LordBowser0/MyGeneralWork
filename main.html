@@ -1,0 +1,35 @@
+<!-- 
+Author: Leonard Faecke
+Version 0.1
+Last updated: 2022/08/10
+Known bugs:
+
+Credits:
+Pyscript and pandas integration from https://towardsdatascience.com/create-an-interactive-web-app-with-pyscript-and-pandas-3918ad2dada1
+-->
+
+<!DOCTYPE html>
+<html lang = eng>
+    <head>
+        <title>Python Test</title>
+        <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+        <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+        <py-env>
+            - pandas
+            - plotly.express
+        </py-env>
+    </head>
+    <body>
+        <py-script>
+            import pandas as pd
+            import plotly.express as px
+
+            print('Hello World')
+            df = pd.read_csv('D:\Project\Housing.csv')
+            df.sort_values(by='price')
+            print(df)
+            fig = px.line(df, x='price', y='area', title='area dependant on price ')
+            fig.show()
+        </py-script>
+    </body>
+</html>
