@@ -2,7 +2,7 @@ import pandas as pd
 import plotly.express as px
 
 print('Hello World')
-df = pd.read_csv('D:\Project\Housing.csv')
+df = pd.read_csv('https://github.com/LordBowser0/MyGeneralWork/blob/main/Housing.csv')
 df.sort_values(by='price')
 print(df)
 fig = px.line(df, x='price', y='area', title='area dependent on price ')
